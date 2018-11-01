@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class LoginPage {
+export class PageUtils {
   navigateTo(url: string) {
     browser.waitForAngularEnabled(false);
     browser.driver
@@ -11,8 +11,8 @@ export class LoginPage {
   }
 
   loginExecute() {
-    const login = '';
-    const password = '';
+    const login = 'rapha@qafluig.com';
+    const password = 'Raphael@123';
     const inputLogin = element(by.id('username'));
     const inputPassword = element(by.id('password'));
     const submitLogin = element(by.id('submitLogin'));

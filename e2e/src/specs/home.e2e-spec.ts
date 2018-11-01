@@ -1,18 +1,18 @@
 import { HomePage } from '../pages/home.po';
-import { LoginPage } from '../pages/login.po';
+import { PageUtils } from '../pages/page-utils.po';
 
 describe('home page', () => {
-  let login: LoginPage;
+  let login: PageUtils;
   let home: HomePage;
 
   beforeAll(() => {
     home = new HomePage();
-    login = new LoginPage();
+    login = new PageUtils();
     login.navigateTo('/app/lms/home');
     login.loginExecute();
   });
 
-  it('banner title should be Lorem Ipsum', () => {
+  it('should be the correct name of the initial banner title', () => {
     expect(home.getBannerTitle()).toEqual('Lorem Ipsum');
   });
 
@@ -24,7 +24,7 @@ describe('home page', () => {
     }, 800);
   });
 
-  it('should have the same amount of bullets and slides', () => {
-    expect(home.getNumberOfSlides()).toEqual(5);
+  it('should have the same number of bullets and slides', () => {
+    expect(home.getSlides()).toEqual(5);
   });
 });

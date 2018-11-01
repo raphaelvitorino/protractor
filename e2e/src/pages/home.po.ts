@@ -11,8 +11,8 @@ export class HomePage {
     slide.click();
   }
 
-  getNumberOfSlides() {
-    const bullets = element.all(by.css('.carousel-indicators li'));
-    return bullets.count();
+  getSlides() {
+    const slides = element.all(by.css('.carousel-indicators li'));
+    return slides.count();
   }
 }
